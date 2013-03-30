@@ -5,6 +5,15 @@ set ai
 set encoding=utf-8
 autocmd! bufwritepost .vimrc source %
 
+let mapleader = ","
+
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
+
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
+map <Leader>a ggVG  " select all
+
 set autoread " reload file when changes happen in other editors
 set tags=./tags
 
