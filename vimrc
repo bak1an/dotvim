@@ -3,6 +3,7 @@ set nocompatible
 set t_Co=256
 let g:molokai_original = 1
 colorscheme molokai
+syntax on
 set ai
 set encoding=utf-8
 autocmd! bufwritepost .vimrc source %
