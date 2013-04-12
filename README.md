@@ -1,3 +1,5 @@
 dotvim
 ======
-my vim config
+
+- for nice colors inside screen copy 'screenrc-example' to your '~/.screenrc'
+
