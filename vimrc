@@ -1,9 +1,16 @@
-call pathogen#infect()
 set nocompatible
+
+filetype off
+
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
+
 set t_Co=256
 let g:molokai_original = 1
 colorscheme molokai
-syntax on
 set ai
 set encoding=utf-8
 autocmd! bufwritepost .vimrc source %
@@ -84,4 +91,23 @@ highlight lCursor guifg=NONE guibg=Cyan
 set wildmenu
 set wildmode=list:longest
 set wildignore=.git,*.swp,*/tmp/*
+
+" found here: http://stackoverflow.com/a/2170800/70778
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == 'j'
+            return "\<C-N>"
+        elseif a:action == 'k'
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
