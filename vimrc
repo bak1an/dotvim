@@ -91,6 +91,9 @@ highlight lCursor guifg=NONE guibg=Cyan
 set wildmenu
 set wildmode=list:longest
 set wildignore=.git,*.swp,*/tmp/*
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
 
 " found here: http://stackoverflow.com/a/2170800/70778
 function! OmniPopup(action)
