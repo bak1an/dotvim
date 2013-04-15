@@ -114,3 +114,6 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" ignore E501
+let g:pymode_lint_ignore = "E501"
+
