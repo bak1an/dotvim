@@ -81,3 +81,7 @@ set iminsert=0
 set imsearch=0
 highlight lCursor guifg=NONE guibg=Cyan
 
+set wildmenu
+set wildmode=list:longest
+set wildignore=.git,*.swp,*/tmp/*
+
