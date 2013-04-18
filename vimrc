@@ -25,6 +25,7 @@ vnoremap > >gv  " better indentation
 map <Leader>a ggVG  " select all
 
 set autoread " reload file when changes happen in other editors
+au CursorHold * checktime
 set tags=./tags
 
 set mouse=a
