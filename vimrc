@@ -123,6 +123,7 @@ let g:pymode_lint_ignore = "E501"
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTree %<CR>
 
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -132,4 +133,6 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+let g:gist_clip_command = 'xclip -selection clipboard'
 
