@@ -118,3 +118,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " ignore E501
 let g:pymode_lint_ignore = "E501"
 
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n> :NERDTreeToggle<CR>
+
