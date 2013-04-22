@@ -37,6 +37,8 @@ set clipboard=unnamed
 
 set history=700
 set undolevels=700
+set laststatus=2
+set noshowmode
 
 set tabstop=4
 set softtabstop=4
@@ -121,4 +123,13 @@ let g:pymode_lint_ignore = "E501"
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
+
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 
