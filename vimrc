@@ -20,9 +20,18 @@ let mapleader = ","
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 
+nnoremap <C-e> 2<C-e>
+nnoremap <C-y> 2<C-y>
+
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 map <Leader>a ggVG  " select all
+
+" Use the damn hjkl keys
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
 
 set autoread " reload file when changes happen in other editors
 au CursorHold * checktime
