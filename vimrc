@@ -17,9 +17,6 @@ autocmd! bufwritepost .vimrc source %
 
 let mapleader = ","
 
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
-
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
