@@ -34,7 +34,6 @@ set autoread " reload file when changes happen in other editors
 au CursorHold * checktime
 set tags=./tags
 
-set mouse=a
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
@@ -51,8 +50,7 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
-" disable formatting when pasting large chunks of code
-set pastetoggle=<F2>
+set nrformats=
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
