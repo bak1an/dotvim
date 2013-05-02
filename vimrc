@@ -87,6 +87,21 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" found here http://stackoverflow.com/a/1919805/893870
+nnoremap <Leader>H :call<SID>LongLineHLToggle()<cr>
+hi OverLength ctermbg=none cterm=none
+match OverLength /\%>80v/
+fun! s:LongLineHLToggle()
+    if !exists('w:longlinehl')
+        let w:longlinehl = matchadd('ErrorMsg', '.\%>80v', 0)
+        echo "Long lines highlighted"
+    else
+        call matchdelete(w:longlinehl)
+        unl w:longlinehl
+        echo "Long lines unhighlighted"
+    endif
+endfunction
+
 set cursorline
 
 set keymap=russian-jcukenwin
@@ -120,13 +135,15 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" ignore E501
-let g:pymode_lint_ignore = "E501"
+" https://github.com/klen/python-mode/pull/214 - patch for fixing lint_ignore
+let g:pymode_lint_ignore = "E501,W391,C0301"
+let g:pymode_lint_checker = "pyflakes,pep8,mccabe,pylint"
 
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :NERDTree %<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 if ! has('gui_running')
     set ttimeoutlen=10
