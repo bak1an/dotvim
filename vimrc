@@ -65,6 +65,7 @@ set nowrap " don't automatically wrap on load
 set tw=79  " width of document (used by gd)
 set fo-=t  " don't automatically wrap text when typing
 set number " show line numbers
+set nomodeline
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
