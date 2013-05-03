@@ -135,7 +135,6 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" https://github.com/klen/python-mode/pull/214 - patch for fixing lint_ignore
 let g:pymode_lint_ignore = "E501,W391,C0301"
 let g:pymode_lint_checker = "pyflakes,pep8,mccabe,pylint"
 
