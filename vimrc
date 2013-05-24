@@ -158,3 +158,7 @@ let g:gist_clip_command = 'xclip -selection clipboard'
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 au BufNewFile,BufReadPost *.coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
+if !exists(":SudoWrite")
+  command SudoWrite w !sudo tee > /dev/null %
+endif
+
