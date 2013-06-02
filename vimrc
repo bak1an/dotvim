@@ -165,3 +165,5 @@ if !exists(":SudoWrite")
   command SudoWrite w !sudo tee > /dev/null %
 endif
 
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+runtime macros/matchit.vim
