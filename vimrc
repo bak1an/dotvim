@@ -167,3 +167,6 @@ endif
 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 runtime macros/matchit.vim
+
+set pastetoggle=<f5>
+set hidden
