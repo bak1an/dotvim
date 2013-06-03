@@ -170,3 +170,5 @@ runtime macros/matchit.vim
 
 set pastetoggle=<f5>
 set hidden
+
+map <f9> :set wrap!<cr>
