@@ -172,3 +172,5 @@ set pastetoggle=<f5>
 set hidden
 
 map <f9> :set wrap!<cr>
+map <leader>j %! python -m json.tool<cr>
+map <leader>w :%s/\s\+$//g<cr>
