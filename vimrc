@@ -175,3 +175,4 @@ map <f9> :set wrap!<cr>
 vmap <leader>j ! python -m json.tool<cr>
 vmap <leader>x ! tidy -i -q -xml<cr>
 map <leader>w :%s/\s\+$//g<cr>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
