@@ -144,7 +144,6 @@ let g:pymode_lint_checker = "pyflakes,pep8,mccabe,pylint"
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
-map <C-m> :NERDTree %<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
 if ! has('gui_running')
