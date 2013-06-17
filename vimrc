@@ -200,4 +200,4 @@ nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
 nmap <F8> :TagbarToggle<CR>
-
+nmap <F7> :! ctags -R --python-kinds=-i<CR>
