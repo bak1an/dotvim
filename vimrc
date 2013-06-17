@@ -29,8 +29,8 @@ noremap <left> <nop>
 noremap <right> <nop>
 
 set autoread " reload file when changes happen in other editors
-au CursorHold * checktime
-set tags=./tags
+au CursorHold * silent! checktime
+set tags=./tags,tags
 
 set wildignore+=*.pyc
 set wildignore+=*_build/*
@@ -136,7 +136,7 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
 " insert mode
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 let g:pymode_lint_ignore = "E501,W391,C0301"
 let g:pymode_lint_checker = "pyflakes,pep8,mccabe,pylint"
@@ -194,4 +194,10 @@ xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 " recursively vimgrep for word under cursor or selection if you hit leader-star
 nmap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
 vmap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
+"--------------------------------------------------------------------------------
+
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
+
+nmap <F8> :TagbarToggle<CR>
 
