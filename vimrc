@@ -209,3 +209,9 @@ nmap <leader>T :CtrlPBufTagAll<CR>
 nmap <leader>TT :CtrlPTag<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>B :CtrlPMRU<CR>
+
+function WriteCreatingDirs()
+    execute ':silent !mkdir -p %:h'
+    write
+endfunction
+command W call WriteCreatingDirs()
