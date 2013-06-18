@@ -199,5 +199,13 @@ vmap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . 
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
+let g:pymode_breakpoint=0
+let g:pymode_breakpoint_key = '<leader>R'
+
 nmap <F8> :TagbarToggle<CR>
 nmap <F7> :! ctags -R --python-kinds=-i<CR>
+nmap <leader>t :CtrlPBufTag<CR>
+nmap <leader>T :CtrlPBufTagAll<CR>
+nmap <leader>TT :CtrlPTag<CR>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>B :CtrlPMRU<CR>
