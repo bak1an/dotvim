@@ -217,3 +217,5 @@ function WriteCreatingDirs()
     write
 endfunction
 command W call WriteCreatingDirs()
+
+nmap <leader>s :set spell!<CR>
