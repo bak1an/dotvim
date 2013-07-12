@@ -30,7 +30,7 @@ noremap <right> <nop>
 
 set autoread " reload file when changes happen in other editors
 au CursorHold * silent! checktime
-set tags=./tags,tags
+set tags=./tags,tags,~/tags
 
 set wildignore+=*.pyc
 set wildignore+=*_build/*
