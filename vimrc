@@ -219,3 +219,5 @@ endfunction
 command W call WriteCreatingDirs()
 
 nmap <leader>s :set spell!<CR>
+
+let g:riv_global_leader = '<C-R>'
