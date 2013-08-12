@@ -221,3 +221,9 @@ command W call WriteCreatingDirs()
 nmap <leader>s :set spell!<CR>
 
 let g:riv_global_leader = '<C-R>'
+
+
+" ruby stuff
+au BufNewFile,BufReadPost *.rb setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+
