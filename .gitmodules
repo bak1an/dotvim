@@ -90,3 +90,6 @@
 [submodule "vim/bundle/mustache"]
 	path = vim/bundle/mustache
 	url = git://github.com/mustache/vim-mode.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
