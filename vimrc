@@ -226,5 +226,3 @@ let g:riv_global_leader = '<C-R>'
 " ruby stuff
 au BufNewFile,BufReadPost *.rb setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
-
-au FileType javascript setl sw=2 sts=2 et
