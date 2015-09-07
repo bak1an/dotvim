@@ -205,7 +205,7 @@ let g:pymode_breakpoint_key = '<leader>R'
 nmap <f11> :PyLintToggle<CR>
 nmap <f10> :PyLintWindowToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-nmap <F7> :! ctags -R --python-kinds=-i<CR>
+nmap <F7> :! ctags -R --exclude=@$HOME/.ctagsignore --python-kinds=-i<CR>
 nmap <leader>t :CtrlPBufTag<CR>
 nmap <leader>T :CtrlPBufTagAll<CR>
 nmap <leader>TT :CtrlPTag<CR>
