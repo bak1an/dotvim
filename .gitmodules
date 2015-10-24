@@ -99,6 +99,6 @@
 [submodule "vim/bundle/vim-jst"]
 	path = vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
-[submodule "bundle/vim-less"]
-	path = bundle/vim-less
-	url = https://github.com/groenewege/vim-less.git
+[submodule "bundle/vim-lesss"]
+	path = bundle/vim-lesss
+	url = https://github.com/lunaru/vim-less.git
