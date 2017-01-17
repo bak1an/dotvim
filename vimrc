@@ -144,7 +144,7 @@ let g:pymode_lint_checker = "pyflakes,pep8,mccabe,pylint"
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '\.o$']
 
 if ! has('gui_running')
     set ttimeoutlen=10
