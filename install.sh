@@ -1,7 +1,7 @@
 #!/bin/sh
 
-SCRIPT_PATH="`readlink -f "$0"`"
-BASE_DIR="`dirname "$SCRIPT_PATH"`"
+SCRIPT_PATH="`readlink  "$0"`"
+BASE_DIR="$HOME/dotvim"
 
 move() {
     if [ -e "$1" ]; then
