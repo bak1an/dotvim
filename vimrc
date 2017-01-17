@@ -228,3 +228,8 @@ au BufNewFile,BufReadPost *.rb setl tabstop=2 softtabstop=2 shiftwidth=2 expandt
 
 au BufRead,BufNewFile *.tpl set filetype=smarty 
 
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+
