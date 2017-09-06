@@ -102,3 +102,6 @@
 [submodule "bundle/vim-lesss"]
 	path = bundle/vim-lesss
 	url = https://github.com/lunaru/vim-less.git
+[submodule "vim/bundle/ansible-vim"]
+	path = vim/bundle/ansible-vim
+	url = https://github.com/pearofducks/ansible-vim.git
