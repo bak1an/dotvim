@@ -200,6 +200,8 @@ vmap <leader>* :<C-u>call <SID>VSetSearch()<CR>:execute 'noautocmd vimgrep /' . 
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
+nnoremap <leader>r :!%:p<CR>
+
 let g:pymode_breakpoint=0
 let g:pymode_breakpoint_key = '<leader>R'
 
