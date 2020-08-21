@@ -229,10 +229,12 @@ let g:riv_global_leader = '<C-R>'
 " ruby stuff
 au BufNewFile,BufReadPost *.rb setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
-au BufRead,BufNewFile *.tpl set filetype=smarty 
+au BufRead,BufNewFile *.tpl set filetype=smarty
 
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
+
+autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
 
