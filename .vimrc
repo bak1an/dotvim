@@ -44,6 +44,9 @@ call plug#begin()
   " faster moving around the file
   Plug 'justinmk/vim-sneak', { 'commit': 'c13d0497139b8796ff9c44ddb9bc0dc9770ad2dd' }
 
+  " nice and shiny status line
+  Plug 'vim-airline/vim-airline', { 'commit': '7a552f415c48aed33bf7eaa3c50e78504d417913' }
+
   " a bunch of themes, see previews at https://vimcolorschemes.com/rafi/awesome-vim-colorschemes
   Plug 'rafi/awesome-vim-colorschemes', { 'commit': 'ae5e02298c8de6a5aa98fe4d29a21874cfcc3619' }
 
@@ -60,6 +63,9 @@ call plug#end()
 
   " change your theme here
   colorscheme hybrid_material
+
+  " simplify right part of airline a bit
+  au User AirlineAfterInit :let g:airline_section_z = airline#section#create(['%3p%% %L:%3v'])
 
 " the keys
   let mapleader = ' '
@@ -147,4 +153,3 @@ call plug#end()
   " get extra configs from .exrc in current folder but do not fully trust it
   set secure
   set exrc
-
