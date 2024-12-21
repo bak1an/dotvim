@@ -13,12 +13,12 @@ curl -fLo ~/.vimrc https://raw.githubusercontent.com/bak1an/dotvim/refs/heads/ma
 #### Install from git
 
 ```bash
-git clone https://github.com/bak1an/dotvim.git ~/.dotvim && ln -s ~/.dotvim/.vimrc ~/.vimrc
+git clone git@github.com:bak1an/dotvim.git ~/.dotvim && ln -s ~/.dotvim/.vimrc ~/.vimrc
 ```
 
 It will install plugins upon first start into `~/.vim/plugged`.
 
-You can also install plugins after downloading .vimrc with: 
+You can also install plugins after downloading .vimrc with:
 
 ```bash
 vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa"
