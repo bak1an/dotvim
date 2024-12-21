@@ -4,6 +4,8 @@
 
 Getter a slightly fancier vim when working on a remote server.
 
+See .vimrc itself  for details of what it has.
+
 #### Install
 
 ```bash

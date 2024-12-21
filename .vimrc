@@ -79,6 +79,9 @@ omap gW <Plug>Sneak_S
 " clean trailing whitespaces with \w
 map <localleader>w :%s/\s\+$//g<cr>
 
+" toggle spellcheck with \s
+map <localleader>s :set spell!<cr>
+
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
