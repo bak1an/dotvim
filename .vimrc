@@ -19,6 +19,9 @@ call plug#begin()
   " working with surrounds (brackets, quotes)
   Plug 'tpope/vim-surround', { 'branch': 'master' }
 
+  " repeats for vim-surround
+  Plug 'tpope/vim-repeat', { 'branch': 'master' }
+
   " gc(c) to comment
   Plug 'tpope/vim-commentary', { 'branch': 'master' }
 
