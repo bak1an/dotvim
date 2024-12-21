@@ -101,6 +101,9 @@ set shiftwidth=2
 set shiftround
 set expandtab
 
+set foldmethod=syntax
+set foldlevel=99
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
