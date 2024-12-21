@@ -4,6 +4,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" use label mode for sneak plugin.
 let g:sneak#label = 1
 
 call plug#begin()
@@ -45,79 +46,105 @@ call plug#begin()
 
   " a bunch of themes, see previews at https://vimcolorschemes.com/rafi/awesome-vim-colorschemes
   Plug 'rafi/awesome-vim-colorschemes', { 'commit': 'ae5e02298c8de6a5aa98fe4d29a21874cfcc3619' }
+
+  " highlight indent levels, <leader>ig to toggle
+  Plug 'preservim/vim-indent-guides', { 'commit': 'a1e1390c0136e63e813d051de2003bf0ee18ae30' }
 call plug#end()
 
 " visual
-if (has("termguicolors"))
-  set termguicolors
-endif
-syntax on
-set background=dark
-colorscheme hybrid_material
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+  syntax on
+  set background=dark
+
+  " change your theme here
+  colorscheme hybrid_material
 
 " the keys
-let mapleader = ' '
-let localleader = '\'
+  let mapleader = ' '
+  let maplocalleader = '\'
 
-nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>m :CtrlPMRUFiles<CR>
+  " <space>f for fuzzy file search
+  nnoremap <leader>f :CtrlP<CR>
+  " <space>b for fuzzy buffers search
+  nnoremap <leader>b :CtrlPBuffer<CR>
+  " <space>m for mru files search
+  nnoremap <leader>m :CtrlPMRUFiles<CR>
 
-nnoremap <leader>e :NERDTreeToggle<CR>
-nnoremap <leader>E :NERDTreeFind<CR>
+  " <space>e to toggle file tree
+  nnoremap <leader>e :NERDTreeToggle<CR>
+  " <space>E to reveal current file in tree
+  nnoremap <leader>E :NERDTreeFind<CR>
 
-" 2-character Sneak
-nmap gw <Plug>Sneak_s
-nmap gW <Plug>Sneak_S
-" visual-mode
-xmap gw <Plug>Sneak_s
-xmap gW <Plug>Sneak_S
-" operator-pending-mode
-omap gw <Plug>Sneak_s
-omap gW <Plug>Sneak_S
+  " gw to jump around file with labels, see sneak plugin
+  " 2-character Sneak
+  nmap gw <Plug>Sneak_s
+  nmap gW <Plug>Sneak_S
+  " visual-mode
+  xmap gw <Plug>Sneak_s
+  xmap gW <Plug>Sneak_S
+  " operator-pending-mode
+  omap gw <Plug>Sneak_s
+  omap gW <Plug>Sneak_S
 
-" clean trailing whitespaces with \w
-map <localleader>w :%s/\s\+$//g<cr>
+  " clean trailing whitespaces with \w
+  map <localleader>w :%s/\s\+$//g<cr>
 
-" toggle spellcheck with \s
-map <localleader>s :set spell!<cr>
+  " toggle spellcheck with \s
+  map <localleader>s :set spell!<cr>
 
-nnoremap <C-e> 2<C-e>
-nnoremap <C-y> 2<C-y>
+  " twice faster scrolling with C-e and C-y
+  nnoremap <C-e> 2<C-e>
+  nnoremap <C-y> 2<C-y>
 
-vnoremap < <gv
-vnoremap > >gv
+  " when changing indent with > or < in visual mode - reselect it again right after
+  vnoremap < <gv
+  vnoremap > >gv
 
 " editor behaviour
-autocmd! bufwritepost .vimrc source %
+  " reload .vimrc when edited
+  autocmd! bufwritepost .vimrc source %
 
-set ai
-set hlsearch
-set ignorecase
-set smartcase
-set nowrap
-set number
-set relativenumber
-set cursorline
-set showcmd
+  " better default search params
+  set hlsearch
+  set ignorecase
+  set smartcase
 
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
+  " do not break long lines
+  set nowrap
+  set textwidth=0
 
-set foldmethod=syntax
-set foldlevel=99
+  " show line numbers and cursor and cmd
+  set number
+  set relativenumber
+  set cursorline
+  set showcmd
 
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+  " auto indent + default indent params (vim-sleuth will magically adjust this in actual file)
+  set ai
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set shiftround
+  set expandtab
 
-let g:ctrlp_show_hidden = 1
+  " syntax based folding, all open by default
+  set foldmethod=syntax
+  set foldlevel=99
 
-set secure
-set exrc
+  " highlight trailing whitespaces in red
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  match ExtraWhitespace /\s\+$/
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
+
+  " fuzzy search will show hidden files as well
+  let g:ctrlp_show_hidden = 1
+
+  " get extra configs from .exrc in current folder but do not fully trust it
+  set secure
+  set exrc
+
