@@ -1,8 +1,8 @@
 ## dotvim
 
-### Single file drop in vim configuration for remote locations.
+### Single file, drop in vim configuration for remote locations.
 
-Getter a slightly fancier vim when working on a remote server.
+Get a slightly fancier vim when working on a remote server.
 
 See .vimrc itself  for details of what it has.
 
