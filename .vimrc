@@ -32,6 +32,9 @@ call plug#begin()
   " faster replaces with [count]["x]gr{motion} ([count]grr for lines)
   Plug 'vim-scripts/ReplaceWithRegister', { 'commit': '832efc23111d19591d495dc72286de2fb0b09345' }
 
+  " git changes signs
+  Plug 'airblade/vim-gitgutter', { 'commit': '7b0b5098e3e57be86bb96cfbf2b8902381eef57c' }
+
   " fuzzy files search on <space>f
   Plug 'ctrlpvim/ctrlp.vim', { 'commit': '475a864e7f01dfc5c93965778417cc66e77f3dcc' }
 
@@ -69,6 +72,8 @@ call plug#end()
 
   " simplify right part of airline a bit
   au User AirlineAfterInit :let g:airline_section_z = airline#section#create(['%3p%% %L:%3v'])
+
+  highlight! link SignColumn LineNr
 
 " the keys
   let mapleader = ' '
