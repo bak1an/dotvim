@@ -150,6 +150,10 @@ call plug#end()
   " fuzzy search will show hidden files as well
   let g:ctrlp_show_hidden = 1
 
-  " get extra configs from .exrc in current folder but do not fully trust it
-  set secure
-  set exrc
+" language specific configs
+  autocmd FileType yaml setlocal foldmethod=indent
+  autocmd FileType vim setlocal foldmethod=indent
+
+" get extra configs from .exrc in current folder but do not fully trust it
+set secure
+set exrc
