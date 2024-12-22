@@ -10,6 +10,9 @@ let g:sneak#label = 1
 " only tag what is tracked by git
 let g:gutentags_file_list_command = 'git ls-files'
 
+" ignore more things in ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|tags'
+
 call plug#begin()
   " modern defaults
   Plug 'tpope/vim-sensible', { 'tag': 'v2.0' }
