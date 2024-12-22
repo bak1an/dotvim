@@ -6,13 +6,19 @@ Get a slightly fancier vim when working on a remote server.
 
 See .vimrc itself  for details of what it has.
 
+#### Requirements
+
+- `vim`
+- `git`
+- (optional) some `ctags` implementation, `universal-ctags` recommended
+
 #### Install
 
 ```bash
 curl -fLo ~/.vimrc https://raw.githubusercontent.com/bak1an/dotvim/refs/heads/master/.vimrc
 ```
 
-#### Install from git
+or using git
 
 ```bash
 git clone git@github.com:bak1an/dotvim.git ~/.dotvim && ln -s ~/.dotvim/.vimrc ~/.vimrc

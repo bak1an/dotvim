@@ -7,6 +7,9 @@ endif
 " use label mode for sneak plugin.
 let g:sneak#label = 1
 
+" only tag what is tracked by git
+let g:gutentags_file_list_command = 'git ls-files'
+
 call plug#begin()
   " modern defaults
   Plug 'tpope/vim-sensible', { 'tag': 'v2.0' }
@@ -40,6 +43,9 @@ call plug#begin()
 
   " tagbar
   Plug 'preservim/tagbar', { 'commit': '5e090da54bf999c657608b6c8ec841ef968d923d' }
+
+  " automatic tags generation
+  Plug 'ludovicchabant/vim-gutentags', { 'commit': 'aa47c5e29c37c52176c44e61c780032dfacef3dd' }
 
   " fuzzy files search on <space>f
   Plug 'ctrlpvim/ctrlp.vim', { 'commit': '475a864e7f01dfc5c93965778417cc66e77f3dcc' }
@@ -92,6 +98,8 @@ call plug#end()
   nnoremap <leader>b :CtrlPBuffer<CR>
   " <space>m for mru files search
   nnoremap <leader>m :CtrlPMRUFiles<CR>
+  " <space>t for tag search
+  nnoremap <leader>t :CtrlPTag<CR>
 
   " <space>e to toggle file tree
   nnoremap <leader>e :NERDTreeToggle<CR>
