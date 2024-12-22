@@ -13,6 +13,9 @@ let g:gutentags_file_list_command = 'git ls-files'
 " ignore more things in ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|tags'
 
+" will skip ctags plugins and keybinds if there is no ctags in the system
+let s:ctags_present = executable('ctags')
+
 call plug#begin()
   " modern defaults
   Plug 'tpope/vim-sensible', { 'tag': 'v2.0' }
@@ -44,11 +47,13 @@ call plug#begin()
   " git is here
   Plug 'tpope/vim-fugitive', { 'commit': 'fcb4db52e7f65b95705aa58f0f2df1312c1f2df2' }
 
-  " tagbar
-  Plug 'preservim/tagbar', { 'commit': '5e090da54bf999c657608b6c8ec841ef968d923d' }
+  if s:ctags_present
+    " tagbar
+    Plug 'preservim/tagbar', { 'commit': '5e090da54bf999c657608b6c8ec841ef968d923d' }
 
-  " automatic tags generation
-  Plug 'ludovicchabant/vim-gutentags', { 'commit': 'aa47c5e29c37c52176c44e61c780032dfacef3dd' }
+    " automatic tags generation
+    Plug 'ludovicchabant/vim-gutentags', { 'commit': 'aa47c5e29c37c52176c44e61c780032dfacef3dd' }
+  endif
 
   " fuzzy files search on <space>f
   Plug 'ctrlpvim/ctrlp.vim', { 'commit': '475a864e7f01dfc5c93965778417cc66e77f3dcc' }
@@ -101,18 +106,20 @@ call plug#end()
   nnoremap <leader>b :CtrlPBuffer<CR>
   " <space>m for mru files search
   nnoremap <leader>m :CtrlPMRUFiles<CR>
-  " <space>t for tag search
-  nnoremap <leader>t :CtrlPTag<CR>
 
   " <space>e to toggle file tree
   nnoremap <leader>e :NERDTreeToggle<CR>
   " <space>E to reveal current file in tree
   nnoremap <leader>E :NERDTreeFind<CR>
 
-  " \e to toggle tagbar
-  nnoremap <localleader>e :TagbarToggle<CR>
-  " \E to reveal current tag
-  nnoremap <localleader>E :TagbarOpen fj<CR>
+  if s:ctags_present
+    " \e to toggle tagbar
+    nnoremap <localleader>e :TagbarToggle<CR>
+    " \E to reveal current tag
+    nnoremap <localleader>E :TagbarOpen fj<CR>
+    " <space>t for tag search
+    nnoremap <leader>t :CtrlPTag<CR>
+  endif
 
   " gw to jump around file with labels, see sneak plugin
   " 2-character Sneak
