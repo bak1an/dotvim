@@ -67,6 +67,12 @@ call plug#end()
   if (has("termguicolors"))
     set termguicolors
   endif
+  " use 256 colors in terminal
+  if !has("gui_running")
+    set t_Co=256
+    set term=screen-256color
+  endif
+
   syntax on
   set background=dark
 
