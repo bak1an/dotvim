@@ -29,6 +29,9 @@ call plug#begin()
   " SudoWrite and SudoEdit live here
   Plug 'tpope/vim-eunuch', { 'branch': 'master' }
 
+  " faster replaces with [count]["x]gr{motion} ([count]grr for lines)
+  Plug 'vim-scripts/ReplaceWithRegister', { 'commit': '832efc23111d19591d495dc72286de2fb0b09345' }
+
   " fuzzy files search on <space>f
   Plug 'ctrlpvim/ctrlp.vim', { 'commit': '475a864e7f01dfc5c93965778417cc66e77f3dcc' }
 
