@@ -35,6 +35,9 @@ call plug#begin()
   " git changes signs
   Plug 'airblade/vim-gitgutter', { 'commit': '7b0b5098e3e57be86bb96cfbf2b8902381eef57c' }
 
+  " git is here
+  Plug 'tpope/vim-fugitive', { 'commit': 'fcb4db52e7f65b95705aa58f0f2df1312c1f2df2' }
+
   " fuzzy files search on <space>f
   Plug 'ctrlpvim/ctrlp.vim', { 'commit': '475a864e7f01dfc5c93965778417cc66e77f3dcc' }
 
@@ -45,7 +48,7 @@ call plug#begin()
   Plug 'sheerun/vim-polyglot', { 'commit': 'f5393cfee07aeb666f4d75f9b3a83163862fb094' }
 
   " better %
-  Plug 'https://github.com/adelarsq/vim-matchit', { 'commit': 'f52e59b05a937fe3102d431dd23f8ae4d8752ba3' }
+  Plug 'adelarsq/vim-matchit', { 'commit': 'f52e59b05a937fe3102d431dd23f8ae4d8752ba3' }
 
   " faster moving around the file
   Plug 'justinmk/vim-sneak', { 'commit': 'c13d0497139b8796ff9c44ddb9bc0dc9770ad2dd' }
