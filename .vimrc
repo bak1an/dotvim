@@ -120,6 +120,9 @@ call plug#end()
   " reload .vimrc when edited
   autocmd! bufwritepost .vimrc source %
 
+  " make vim ui faster
+  set updatetime=250
+
   " better default search params
   set hlsearch
   set ignorecase
