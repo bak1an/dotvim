@@ -23,7 +23,7 @@ It will install plugins upon first start into `~/.vim/plugged`.
 You can also install plugins after downloading .vimrc with:
 
 ```bash
-vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa"
+vim -es -u ~/.vimrc -i NONE -c "PlugInstall" -c "qa"
 ```
 
 #### Get colors to display fine in tmux
