@@ -25,3 +25,9 @@ You can also install plugins after downloading .vimrc with:
 ```bash
 vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa"
 ```
+
+#### Get colors to display fine in tmux
+
+```bash
+echo 'set -g default-terminal "xterm-256color"' >> ~/.tmux.conf
+```
