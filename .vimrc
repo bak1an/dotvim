@@ -38,6 +38,9 @@ call plug#begin()
   " git is here
   Plug 'tpope/vim-fugitive', { 'commit': 'fcb4db52e7f65b95705aa58f0f2df1312c1f2df2' }
 
+  " tagbar
+  Plug 'preservim/tagbar', { 'commit': '5e090da54bf999c657608b6c8ec841ef968d923d' }
+
   " fuzzy files search on <space>f
   Plug 'ctrlpvim/ctrlp.vim', { 'commit': '475a864e7f01dfc5c93965778417cc66e77f3dcc' }
 
@@ -94,6 +97,11 @@ call plug#end()
   nnoremap <leader>e :NERDTreeToggle<CR>
   " <space>E to reveal current file in tree
   nnoremap <leader>E :NERDTreeFind<CR>
+
+  " \e to toggle tagbar
+  nnoremap <localleader>e :TagbarToggle<CR>
+  " \E to reveal current tag
+  nnoremap <localleader>E :TagbarOpen fj<CR>
 
   " gw to jump around file with labels, see sneak plugin
   " 2-character Sneak
