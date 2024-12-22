@@ -37,3 +37,12 @@ vim -es -u ~/.vimrc -i NONE -c "PlugInstall" -c "qa"
 ```bash
 echo 'set -g default-terminal "xterm-256color"' >> ~/.tmux.conf
 ```
+
+#### Better vim in a dev container
+
+```Dockerfile
+RUN curl -fLo ~/.vimrc https://raw.githubusercontent.com/bak1an/dotvim/refs/heads/master/.vimrc
+RUN vim -es -u ~/.vimrc -i NONE -c "PlugInstall" -c "qa" || exit 0
+ENV TERM=xterm-256color
+RUN echo 'set -g default-terminal "xterm-256color"' >> ~/.tmux.conf
+```
