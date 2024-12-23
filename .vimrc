@@ -41,6 +41,9 @@ call plug#begin()
   " faster replaces with [count]["x]gr{motion} ([count]grr for lines)
   Plug 'vim-scripts/ReplaceWithRegister', { 'commit': '832efc23111d19591d495dc72286de2fb0b09345' }
 
+  " indent level as a text object
+  Plug 'michaeljsmith/vim-indent-object', { 'commit': '8ab36d5ec2a3a60468437a95e142ce994df598c6' }
+
   " git changes signs
   Plug 'airblade/vim-gitgutter', { 'commit': '7b0b5098e3e57be86bb96cfbf2b8902381eef57c' }
 
