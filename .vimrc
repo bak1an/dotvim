@@ -145,6 +145,12 @@ call plug#end()
   nnoremap <C-e> 2<C-e>
   nnoremap <C-y> 2<C-y>
 
+  " window resizing keymaps using Alt + Arrow keys
+  noremap <silent> <M-Left> :vertical resize -2<CR>
+  noremap <silent> <M-Right> :vertical resize +2<CR>
+  noremap <silent> <M-Down> :resize -2<CR>
+  noremap <silent> <M-Up> :resize +2<CR>
+
   " when changing indent with > or < in visual mode - reselect it again right after
   vnoremap < <gv
   vnoremap > >gv
